@@ -62,7 +62,7 @@ COPY docker/prod/php.ini /usr/local/etc/php/conf.d/99-custom.ini
 COPY docker/prod/php/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Create system user to run Composer and Artisan Commands
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
